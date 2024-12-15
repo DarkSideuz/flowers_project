@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="card text-center">
+        <div class="card-body">
+            <h2 class="card-title">{{ flower.name }}</h2>
+            <p class="card-text"><strong>Type:</strong> {{ flower.type.name }}</p>
+            <p class="card-text">{{ flower.description }}</p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="text-center mb-4">Flowers in {{ type.name }}</h2>
+    <div class="row">
+        {% for flower in flowers %}
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ flower.name }}</h5>
+                        <a href="/flower/{{ flower.id }}/" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
