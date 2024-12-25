@@ -7,4 +7,6 @@ urlpatterns = [
     path('flower/<int:flower_id>/', views.flower_detail, name='flower_detail'),
      path('addtype/', views.add_type, name='add_type'),
     path('addflower/', views.add_flower, name='add_flower'),
+    path('type/update/<int:type_id>/', views.update_type, name='update_type'),
+    path('flower/update/<int:flower_id>/', views.update_flower, name='update_flower'),
 ]

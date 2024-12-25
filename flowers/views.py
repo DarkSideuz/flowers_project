@@ -42,3 +42,27 @@ def add_flower(request):
     else:
         form = FlowerForm()
     return render(request, 'add_flower.html', {'form': form})
+
+
+def update_type(request, type_id):
+    type_obj = get_object_or_404(Type, id=type_id)
+    if request.method == 'POST':
+        form = TypeForm(request.POST, instance=type_obj)
+        if form.is_valid():
+            form.save()
+            return redirect('flower_list')
+    else:
+        form = TypeForm(instance=type_obj)
+    return render(request, 'update_type.html', {'form': form})
+
+
+def update_flower(request, flower_id):
+    flower = get_object_or_404(Flower, id=flower_id)
+    if request.method == 'POST':
+        form = FlowerForm(request.POST, instance=flower)
+        if form.is_valid():
+            form.save()
+            return redirect('flower_list')
+    else:
+        form = FlowerForm(instance=flower)
+    return render(request, 'update_flower.html', {'form': form})
